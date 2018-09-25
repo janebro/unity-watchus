@@ -5,6 +5,9 @@ using UnityEngine.Video;
 
 public class TVPlayer : MonoBehaviour
 {
+    [SerializeField] VideoClip alertVideoClip;
+    [SerializeField] VideoClip offlineVideoClip;
+ 
     VideoPlayer vp;
 
     private void Start()
@@ -14,8 +17,22 @@ public class TVPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        vp.Stop();
-        vp.Play();
+        if (other.gameObject.tag == "Player")
+        {
+            vp.Stop();
+            vp.clip = alertVideoClip;
+            vp.Play();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            vp.Stop();
+            vp.clip = offlineVideoClip;
+            vp.Play();
+        }
     }
 }
  
