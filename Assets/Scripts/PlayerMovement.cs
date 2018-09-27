@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     Rigidbody rb;
 
+    bool inEvent = false;
+
+    int cakeCount = 0;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -21,8 +25,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        if (!inEvent)
+        {
+            h = Input.GetAxisRaw("Horizontal");
+            v = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            h = 0;
+            v = 0;
+        }
 
         Move(h, v);
         Animate(h, v);
@@ -46,5 +58,22 @@ public class PlayerMovement : MonoBehaviour
         bool running = h != 0 || v != 0;
 
         anim.SetBool("isRunning", running);
+    }
+
+    public void ToggleEvent()
+    {
+        inEvent = !inEvent;
+    }
+
+    public void GetReward()
+    {
+        ToggleEvent();
+        anim.SetTrigger("reward");
+    }
+
+    public void IncrementCakeCount()
+    {
+        cakeCount++;
+        print(cakeCount);
     }
 }
