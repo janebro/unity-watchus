@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 23650635607026968}
   - component: {fileID: 135904938234158208}
   - component: {fileID: 95612777050671098}
+  - component: {fileID: 114342742670260016}
   m_Layer: 0
   m_Name: cake
   m_TagString: Untagged
@@ -99,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828539233975354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4919861830316890}
@@ -194,6 +195,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114342742670260016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783883904553300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9441cfb4df20b445b732efe50b183d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setCameraShot: {fileID: 0}
 --- !u!135 &135904938234158208
 SphereCollider:
   m_ObjectHideFlags: 1
