@@ -3,6 +3,7 @@
 public class CakeController : MonoBehaviour
 {
     [SerializeField] CameraGroupController setCameraShot;
+    [SerializeField] GameObject RewardParticles;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,8 @@ public class CakeController : MonoBehaviour
             setCameraShot.ArcShot();
 
             Destroy(gameObject.transform.root.gameObject);
+
+            Instantiate(RewardParticles, other.transform.position, Quaternion.identity);
         }
     }
 }

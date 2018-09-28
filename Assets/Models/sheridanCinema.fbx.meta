@@ -374,7 +374,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.98376626
+      - time: 1
         functionName: ToggleEvent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 18447b2d648be944096ffdb7f5bdc157,
