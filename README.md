@@ -1,2 +1,2 @@
 # unity-watchus
-Unity 3D prototype for study purposes
+Unity 3D prototype project for study purposes
